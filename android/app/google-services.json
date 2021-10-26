@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:692194755164:android:b142094367bf3a2a18dc99",
+        "mobilesdk_app_id": "1:692194755164:android:2964bdc6372beffd18dc99",
         "android_client_info": {
-          "package_name": "com.app.itsvc.mototravel"
+          "package_name": "com.example.mototravel"
         }
       },
       "oauth_client": [
         {
-          "client_id": "692194755164-gboei1d7db1kb4k3eka7popad0j5a6mn.apps.googleusercontent.com",
+          "client_id": "692194755164-3sj7jl1at3k335utcrqlp2c96lq9k8i4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.app.itsvc.mototravel",
+            "package_name": "com.example.mototravel",
             "certificate_hash": "ce8d38e6e0813f964dfc39df12d613fd7ea28190"
           }
         },

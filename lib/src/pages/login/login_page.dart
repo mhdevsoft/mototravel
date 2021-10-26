@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:mototravel/src/pages/login/login_controller.dart';
 import 'package:mototravel/src/utils/colors.dart' as utils;
 import 'package:mototravel/src/widgets/button_app.dart';
+import 'package:flutter/scheduler.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -20,10 +20,9 @@ class _LoginPageState extends State<LoginPage> {
  @override
  //nunca afectara al contruir el diseño
   void initState() {
-    // TODO: implement initState
     super.initState();
-    
-    SchedulerBinding.instance.addPersistentFrameCallback((timeStamp) {
+    //
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
       _con.init(context);
     });
 
@@ -47,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
             _textPassword(),
             _buttonL(),
             _textDown(),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             _textsublime()
           ]
         ),
