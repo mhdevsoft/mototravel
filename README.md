@@ -1,6 +1,5 @@
 # mototravel
-<<<<<<< HEAD
-Applicacion Multiplatafotma para Mototaxis de Viajes 
+Aplicacion Multiplatafotma para Mototaxis de Viajes 
 =======
 
 A new Flutter project.
