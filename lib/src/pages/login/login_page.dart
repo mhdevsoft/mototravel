@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
        alignment: Alignment.centerLeft,
        margin: EdgeInsets.symmetric(horizontal: 25, vertical: 0) ,
-       child: Text('Iniciar Sesion',
+       child: Text('Inicia Sesion',
         style: TextStyle (
           color: Colors.black,
           fontWeight: FontWeight.bold,
