@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "692194755164",
+    "project_id": "mototravel-engine",
+    "storage_bucket": "mototravel-engine.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692194755164:android:b142094367bf3a2a18dc99",
+        "android_client_info": {
+          "package_name": "com.app.itsvc.mototravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692194755164-gboei1d7db1kb4k3eka7popad0j5a6mn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.itsvc.mototravel",
+            "certificate_hash": "ce8d38e6e0813f964dfc39df12d613fd7ea28190"
+          }
+        },
+        {
+          "client_id": "692194755164-o5sijor1jdkimqlr7pdraoiio41f557g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_i8wI5vJxfJUrIj4_Rqgq6RWQg_09kqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692194755164-o5sijor1jdkimqlr7pdraoiio41f557g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
