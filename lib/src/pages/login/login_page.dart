@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
  //nunca afectara al contruir el diseño
   void initState() {
     super.initState();
-    //
+    //ejecutara despues del la costruccion del diseño
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
       _con.init(context);
     });
