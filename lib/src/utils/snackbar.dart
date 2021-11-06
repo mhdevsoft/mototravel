@@ -10,7 +10,7 @@ class Snackbar
     if (key.currentState == null) return;
 
     FocusScope.of(context).requestFocus(new FocusNode());
-    //en caso que venga vacio no lo muestra
+    //en caso que venga vacio no lo muestra xd
     key.currentState?.removeCurrentSnackBar();
     key.currentState.showSnackBar(new SnackBar(
      content: Text(
