@@ -146,9 +146,12 @@ class _OTPFieldsState extends State<OTPFields> {
                   controller: widget.pin4,
                   focusNode: pin4FN,
                   style: pinStyle,
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text,
                   textAlign: TextAlign.center,
                   decoration: inputDecoration,
+                    inputFormatters: [
+                    UpperCaseTextFormatter(),
+                  ],
                   onChanged: (value) => nextField(value, pin5FN),
                 ),
               ),
@@ -160,9 +163,12 @@ class _OTPFieldsState extends State<OTPFields> {
                   controller: widget.pin5,
                   focusNode: pin5FN,
                   style: pinStyle,
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text,
                   textAlign: TextAlign.center,
                   decoration: inputDecoration,
+                    inputFormatters: [
+                    UpperCaseTextFormatter(),
+                  ],
                   onChanged: (value) => nextField(value, pin6FN),
                 ),
               ),
@@ -173,9 +179,12 @@ class _OTPFieldsState extends State<OTPFields> {
                   controller: widget.pin6,
                   focusNode: pin6FN,
                   style: pinStyle,
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text,
                   textAlign: TextAlign.center,
                   decoration: inputDecoration,
+                    inputFormatters: [
+                    UpperCaseTextFormatter(),
+                  ],
                   onChanged: (value) {
                     if (value.length == 1) {
                       pin6FN.unfocus();

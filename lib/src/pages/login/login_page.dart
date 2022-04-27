@@ -215,7 +215,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _textsublime ()
   {
     return Container(
-      child: Text('MotoTravel Ver 1.0.1 Beta Release',
+      child: Text('MotoTravel Ver 1.0',
         style: TextStyle(
           fontSize: 15,
           color: Colors.black

@@ -34,7 +34,7 @@ class DriverregisterController
     this.context = context;
     _authProvider = new AuthProvider();
     _driverProvider = new DriverProvider();
-    _progressDialog  = MyProgressDialog.createProgressDialog(context, 'Espere un Momento....');
+    _progressDialog  = MyProgressDialog.createProgressDialog(context, 'Creando tu Cuenta e Iniciando Sesion Por Primera Vez');
   }
 
   void register ()async
@@ -89,7 +89,7 @@ class DriverregisterController
      );
       await _driverProvider.create(driver);
       _progressDialog.hide();
-      utils.Snackbar.showSnackbar(context, key ,'¡Que Chido! Ahora inicia sesion con tu cuenta para continuar');
+      Navigator.pushNamedAndRemoveUntil(context, 'driver/map', (route) => false);
       print('Que Pro');
 
     }

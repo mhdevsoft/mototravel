@@ -1,15 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:mototravel/src/pages/home/home_controller.dart';
 //diseños y no elementos que cambien
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   //declaramos nuestra clase con construcctor de manera global
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
    homecontroller _con = new homecontroller();
+
+ @override
+ //nunca afectara al contruir el diseño
+  void initState() {
+    super.initState();
+    //ejecutara despues del la costruccion del diseño
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      _con.init(context);
+    });
+
+  }
+
   @override
   Widget build(BuildContext context)
    {
-       _con.init(context); //inicializamos el metodo 
+  
     // etiqueta del esqueleto de la pantalla
     return Scaffold(
       //propiedades
@@ -30,16 +48,16 @@ class HomePage extends StatelessWidget {
              _clipshow(context),  
             //Con SizedBox Dejamos el espacio hacia abajo
               SizedBox(height: 50,),
-              _textShow('Selecciona Tu Rol'),
+              _textShow('¿Que Usuario Eres?'),
               SizedBox(height: 50),
               //Circle Avatar para poner una imagen redonda
                _avatarCircle(context , 'assets/img/user.png','client'),
               SizedBox(height: 10,),
-              _textShow('cliente'),
+              _textShow('Soy cliente'),
               SizedBox(height: 25),
               _images(context, 'assets/img/driver.png','driver'),
               SizedBox(height: 10,),
-               _textShow('conductor'),
+               _textShow('Soy conductor'),
               SizedBox(height: 21),
                
             ],
@@ -58,8 +76,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-
-//agregamos el build context y el context de home page
   Widget _avatarCircle(BuildContext context, String url , String typeUser)
   {
     return
@@ -78,7 +94,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-
   Widget _images(BuildContext context , String location, String typeUser)
   {
      return GestureDetector(
@@ -90,6 +105,7 @@ class HomePage extends StatelessWidget {
                         ),
      );
   }
+
   Widget _clipshow(BuildContext context)
   {
        return
@@ -112,6 +128,4 @@ class HomePage extends StatelessWidget {
                   ),
                 );
   }
-
-
 }

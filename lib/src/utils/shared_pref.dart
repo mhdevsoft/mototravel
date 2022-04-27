@@ -16,6 +16,9 @@ Future <dynamic> read  (String key)
 async
 {
   final prefs = await SharedPreferences.getInstance();
+
+  if (prefs.getString(key) == null) return;
+  
   return json.decode(prefs.getString(key));
 }
 //Ejemplo Nombre - true - false

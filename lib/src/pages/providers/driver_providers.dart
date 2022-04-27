@@ -8,7 +8,7 @@ class DriverProvider
 
   DriverProvider ()
   {
-    _ref = FirebaseFirestore.instance.collection('Conductor');
+    _ref = FirebaseFirestore.instance.collection('drivers');
   }
 
   Future<void> create(Drive driver)
@@ -29,5 +29,27 @@ class DriverProvider
     }
 
 
+  }
+
+  Stream<DocumentSnapshot> getByIdStream(String id)
+  {
+    return _ref.doc(id).snapshots(includeMetadataChanges: true);
+  }
+
+   Future<Drive> getById(String id)async
+  {
+    //es el documento de la base de datos del cliente que va a leer pero sola una vez
+    DocumentSnapshot document = await _ref.doc(id).get();
+    if (document.exists) {
+      Drive drive = Drive.fromJson(document.data());
+      return drive;
+    }
+  return null;
+
+  }
+
+  Future<void> update (Map<String, dynamic> data, String id)
+  {
+    return _ref.doc(id).update(data);
   }
 }

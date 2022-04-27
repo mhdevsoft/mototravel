@@ -11,6 +11,7 @@ class Drive {
         this.email,
         this.password,
         this.placa,
+        this.token
     });
 
     String id;
@@ -18,6 +19,7 @@ class Drive {
     String email;
     String password;
     String placa;
+    String token;
 
     factory Drive.fromJson(Map<String, dynamic> json) => Drive(
         id: json["id"],
@@ -25,6 +27,7 @@ class Drive {
         email: json["email"],
         password: json["password"],
         placa: json["placa"],
+        token: json["token"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -33,5 +36,6 @@ class Drive {
         "email": email,
         "password": password,
         "placa": placa,
+        "token": token,
     };
 }

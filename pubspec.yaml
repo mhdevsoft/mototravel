@@ -40,6 +40,21 @@ dependencies:
   cloud_firestore: ^0.16.0
   progress_dialog: ^1.2.4
   shared_preferences: ^0.5.12+4
+  google_maps_flutter: ^1.0.6
+  flutter_google_places: ^0.2.8
+  geolocator: ^6.1.13
+  location: ^3.1.0
+  geoflutterfire: ^2.2.1
+  geocoder:
+    git: 
+     url: https://github.com/nguyenxdat/flutter_geocoder.git
+     ref: master
+  geocoding: ^1.0.5
+  flutter_polyline_points: ^0.2.4
+  lottie: ^0.7.0+1
+  firebase_messaging: 8.0.0-dev.14
+  modal_bottom_sheet: ^1.0.0+1
+  flutter_rating_bar: ^4.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -69,6 +84,7 @@ flutter:
   assets:
 
   - assets/img/
+  - assets/json/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

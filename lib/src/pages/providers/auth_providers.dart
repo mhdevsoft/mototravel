@@ -1,6 +1,6 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 
 class AuthProvider 
 {
@@ -14,6 +14,41 @@ class AuthProvider
     _firebaseAuth = FirebaseAuth.instance;
   }  
 
+  User getUser()
+  {
+    //inicamos sesion los datos comparamos
+    return _firebaseAuth.currentUser;
+  }
+  //verificar si esta logeado el usuario para evitar multiples logueos y exista un loop
+  bool IsSignedIn(){
+
+    final currentUser = _firebaseAuth.currentUser;
+
+      if (currentUser == null ) {
+        return false;
+      } 
+
+      return true;
+  }
+  void  checkUserLogin (BuildContext context, String typeUser)
+  {
+    FirebaseAuth.instance.authStateChanges().listen((User user) { 
+      //el usuario esta logeado
+     if (user != null && typeUser != null) {
+       if (typeUser == 'client' ) {
+         Navigator.pushNamedAndRemoveUntil(context, 'client/map', (route) => false);
+       }
+        else{
+          Navigator.pushNamedAndRemoveUntil(context, 'driver/map', (route) => false);
+        }
+     }
+     else
+     {
+      return;
+     }
+
+    });
+  }
  //async hara un peteicion a la nube y no se sabra en que momento lo recibira
   Future<bool>  login(String email, String password) async
   {
@@ -36,11 +71,7 @@ class AuthProvider
     }
     return true;
   }
-  User getUser()
-  {
-    //inicamos sesion los datos comparamos
-    return _firebaseAuth.currentUser;
-  }
+
   Future<bool>register(String email, String password) async
   {
     String errorMessage;
@@ -62,6 +93,12 @@ class AuthProvider
     }
     return true;
   }
-  
+   //Cierra Sesion 
+   Future<void> signOut()async
+   {
+      return Future.wait([_firebaseAuth.signOut()]);
+   }
+
+
 }
 

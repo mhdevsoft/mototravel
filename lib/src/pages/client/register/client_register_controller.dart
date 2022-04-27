@@ -27,12 +27,12 @@ class ClientRegisterController
     this.context = context;
     _authProvider = new AuthProvider();
     _clientProvider = new ClientProvider();
-    _progressDialog  = MyProgressDialog.createProgressDialog(context, 'Espere un Momento....');
+    _progressDialog  = MyProgressDialog.createProgressDialog(context, '¡Estas Listo para Viajar! Registrandote un Momento');
   }
 
-  void register ()
+  void register()
    async{
-     String username =  usernameController.text;
+      String username =  usernameController.text;
       String email = emailController.text.trim();
       String password =  passController.text.trim();
       String passwordverify = confirmController.text.trim();
@@ -74,9 +74,7 @@ class ClientRegisterController
      );
       await _clientProvider.create(client);
       _progressDialog.hide();
-      utils.Snackbar.showSnackbar(context, key ,'¡Que Chido! Ahora inicia sesion con tu cuenta para continuar');
-      print('Que Pro');
-
+       Navigator.pushNamedAndRemoveUntil(context, 'client/map', (route) => false);
     }
     else
     {
@@ -87,7 +85,7 @@ class ClientRegisterController
   }
   catch (error)
   {
-     _progressDialog.hide();
+  _progressDialog.hide();
   print('error $error');
   }
     

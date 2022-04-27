@@ -18,7 +18,7 @@ class buttonApp  extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(onPressed: (){
 
-      onPresed();
+      onPresed  ();
     },
     color: color,
     //establece elementos uno encima del otro
@@ -29,7 +29,7 @@ class buttonApp  extends StatelessWidget {
            alignment: Alignment.center,
            height: 40,
            child: Text (text, 
-           style: TextStyle(fontSize: 16,
+           style: TextStyle(fontSize: 15,
            fontWeight:FontWeight.bold),
            )),
 

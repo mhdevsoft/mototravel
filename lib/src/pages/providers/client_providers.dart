@@ -8,7 +8,7 @@ class ClientProvider
 
   ClientProvider ()
   {
-    _ref = FirebaseFirestore.instance.collection('Clients');
+    _ref = FirebaseFirestore.instance.collection('clients');
   }
 
   Future<void> create(Client client)
@@ -29,5 +29,30 @@ class ClientProvider
     }
 
 
+  }
+   Stream<DocumentSnapshot> getByIdStream(String id)
+  {
+    return _ref.doc(id).snapshots(includeMetadataChanges: true);
+  }
+
+  //Consulta a la base de datos del cliente
+ //Rernorara un objeto tipo cliente por su ID
+  Future<Client> getById(String id)async
+  {
+    //es el documento de la base de datos del cliente que va a leer
+    DocumentSnapshot document = await _ref.doc(id).get();
+    if (document.exists) {
+      Client client = Client.fromJson(document.data());
+      return client;
+    }
+   else
+   {
+     return null;
+   }
+  }
+
+  Future<void> update (Map<String, dynamic> data, String id)
+  {
+    return _ref.doc(id).update(data);
   }
 }
